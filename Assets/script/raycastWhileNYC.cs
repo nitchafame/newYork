@@ -5,7 +5,7 @@ public class raycastWhileNYC : MonoBehaviour {
 	//public TextMesh textMesh;
 	public Transform taxi;
 	public Transform rat; 
-	public Transform pizza; 
+	public Transform building; 
 	public Transform trash; 
 	// Use this for initialization
 	void Start () {
@@ -44,12 +44,12 @@ public class raycastWhileNYC : MonoBehaviour {
 				// RangeAttribute++;
 
 			} else if (caseRandom < 6f) {
-					Instantiate (pizza, new Vector3 (X-2f,1f,Z),Quaternion.Euler(0f, Random.Range(0f, 360f), 0f ));//Quaternion.identity=no rotation
-					Z = Z+3;
-					counter++;
+				Instantiate (building, new Vector3 (X-3f,7f,Z-0.3f),Quaternion.identity);//Quaternion.identity=no rotation
+				Z = Z+3;
+				counter++;
 
 			} else if (caseRandom < 9f) {
-				Instantiate (trash, new Vector3 (X-2f,1f,Z),Quaternion.Euler(0f, Random.Range(0f, 360f), 0f ));//Quaternion.identity=no rotation
+				Instantiate (trash, new Vector3 (X-4f,-0.8f,Z+4.5f),Quaternion.Euler(0f, Random.Range(0f, 360f), 0f ));//Quaternion.identity=no rotation
 				Z = Z+3;
 				counter++;
 
@@ -59,7 +59,7 @@ public class raycastWhileNYC : MonoBehaviour {
 					counter++;
 			}
 
-		yield return new WaitForSeconds(0.20f);
+		yield return new WaitForSeconds(0.10f);
 		}
 	}
 }
